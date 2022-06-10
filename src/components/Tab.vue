@@ -6,7 +6,9 @@
             flex: variant === 'vertical',
         }">
             <li v-for="(tab, index) in tabList" :key="index">
-                <label :for="`${_uid}${index}`" v-text="tab" />
+                <span class="sr-only">
+                    <label :for="`${_uid}${index}`" v-text="tab" />
+                </span>
                 <input :id="`${_uid}${index}`" type="radio" :name="`${_uid}-tab`" :value="index + 1"
                     v-model="activeTab" />
             </li>
