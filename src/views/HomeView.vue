@@ -30,6 +30,7 @@ import Tab from "@/components/Tab.vue";
 export default {
   components: {
     Tab,
+    Filter
   },
 
   data() {
