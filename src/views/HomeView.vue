@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import Filter from "../components/Filter.vue";
+import Tab from "../components/Tab.vue";
+
+const tabList = ["Todo", "Carnes", "Vegetariano", "Postres"];
+
+</script>
+
 <template>
   <header>
     <nav>
@@ -12,32 +20,16 @@
     <Filter />
 
     <div>
-      <tab :tabList="tabList">
+      <Tab :tabList="tabList">
         <template v-slot:tabPanel-1> Content 1 </template>
         <template v-slot:tabPanel-2> Content 2 </template>
         <template v-slot:tabPanel-3> Content 3 </template>
         <template v-slot:tabPanel-4> Content 4 </template>
-      </tab>
+      </Tab>
     </div>
 
   </main>
 </template>
 
-<script>
-import Filter from "@/components/filter.vue";
-import Tab from "@/components/Tab.vue";
 
-export default {
-  components: {
-    Tab,
-    Filter
-  },
-
-  data() {
-    return {
-      tabList: ["Todo", "Carnes", "Vegetariano", "Postres"],
-    };
-  },
-};
-</script>
 
