@@ -2,7 +2,7 @@
 import Filter from "../components/Filter.vue";
 import Tab from "../components/Tab.vue";
 
-const tabList = ["Todo", "Carnes", "Vegetariano", "Postres"];
+const tabList = ["Todo", "Comidas", "Cenas", "Vegetariano", "Repostería", "Otros"];
 
 </script>
 
@@ -25,6 +25,8 @@ const tabList = ["Todo", "Carnes", "Vegetariano", "Postres"];
         <template v-slot:tabPanel-2> Content 2 </template>
         <template v-slot:tabPanel-3> Content 3 </template>
         <template v-slot:tabPanel-4> Content 4 </template>
+        <template v-slot:tabPanel-5> Content 5 </template>
+        <template v-slot:tabPanel-6> Content 6 </template>
       </Tab>
     </div>
 
