@@ -38,7 +38,7 @@ function filteredList() {
     width: 100%;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    background: var(--vt-c-white-mute) url("../assets/magnify.svg") no-repeat 95%;
+    background: var(--vt-c-white-mute) url("../assets/magnify.svg") no-repeat 98%;
     background-size: auto;
 }
 
