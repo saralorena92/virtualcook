@@ -21,12 +21,10 @@ const tabList = ["Todo", "Comidas", "Cenas", "Vegetariano", "Repostería", "Otro
 
     <Filter />
 
-    <div>
+    <!-- <div>
       <Tab :tabList="tabList">
         <template v-slot:tabPanel-1>
-          <div class="card__grid">
-            <Card />
-          </div>
+          content 1
         </template>
         <template v-slot:tabPanel-2> Content 2 </template>
         <template v-slot:tabPanel-3> Content 3 </template>
@@ -34,7 +32,7 @@ const tabList = ["Todo", "Comidas", "Cenas", "Vegetariano", "Repostería", "Otro
         <template v-slot:tabPanel-5> Content 5 </template>
         <template v-slot:tabPanel-6> Content 6 </template>
       </Tab>
-    </div>
+    </div> -->
 
   </main>
 </template>

@@ -2,27 +2,59 @@
 import { ref } from "vue";
 
 let input = ref("");
+let inputTodo = 'Todo';
+let inputComida = 'comida';
+
 const recipes = [
-    { link: 'about', name: 'orange' },
-    { link: 'recipe2', name: 'banana' },
-    { link: 'recipe3', name: 'apple' },
+    { name: 'recipe1', image: 'src/assets/magnify.svg', link: 'recipe1', category: 'comida' },
+    { name: 'recipe2', image: 'src/assets/magnify.svg', link: 'recipe2', category: 'postres' },
+    { name: 'recipe3', image: 'src/assets/magnify.svg', link: 'recipe3', category: 'cena' },
+    { name: 'recipe4', image: 'src/assets/magnify.svg', link: 'recipe4', category: 'vegetariano' },
+    { name: 'recipe5', image: 'src/assets/magnify.svg', link: 'recipe5', category: 'comida' },
+    { name: 'recipe6', image: 'src/assets/magnify.svg', link: 'recipe6', category: 'cena' }
 ];
 
 function filteredList() {
+
     return recipes.filter((recipe) =>
         recipe.name.toLowerCase().includes(input.value.toLowerCase())
     );
 }
+
 </script>
 <template>
     <input type="text" class="form-search" v-model="input" placeholder="Buscar receta..." />
-    <a :href="recipe.link" class="form-search__result" v-if="input && filteredList().length"
-        v-for="recipe in filteredList()" :key="recipe.name">
-        {{ recipe.name }}
-    </a>
-    <div class="form-search__result error" v-if="input && !filteredList().length">
-        <p>No results found!</p>
+    <div>
+        <label for="all">Todos</label>
+        <input id="all" type="radio" v-model="inputTodo" name="category">
     </div>
+    <div>
+        <label for="comida">Comida</label>
+        <input id="comida" type="radio" v-model="inputComida" name="category">
+    </div>
+
+    <table>
+        <tbody>
+            <div class="row">
+                <div class="col-2" v-for="recipe in filteredList()">
+                    <a :href="recipe.link">
+                        <figure>
+                            <img :src="recipe.image" :alt="recipe.image">
+                        </figure>
+                        <span>{{ recipe.category }}</span>
+                        <p>
+                            {{ recipe.name }}
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="row" v-if="input && !filteredList().length">
+                <div class="col">
+                    <p>No results found!</p>
+                </div>
+            </div>
+        </tbody>
+    </table>
 </template>
 
 <style>

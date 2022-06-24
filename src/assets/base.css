@@ -114,3 +114,16 @@ header nav a{
         clip: rect(0, 0, 0, 0);
         border: 0;
 }
+
+/*grid*/
+.row{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+.col-2{
+flex: 1 1 50%;
+}
+.col{
+  flex: 1 1 100%;
+}
