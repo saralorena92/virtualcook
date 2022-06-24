@@ -6,14 +6,9 @@ const cards = [
     { link: 'recipe3', text: 'card 3', image: 'src/assets/magnify.svg' },
 ];
 
-function cardList() {
-    return cards.filter((card) =>
-        card.text.toLowerCase()
-    );
-}
 </script>
 <template>
-    <a :href="card.link" v-for="card in cardList()" :key="card.text" class="card">
+    <a :href="card.link" v-for="card in cards" :key="card.text" class="card">
         <figure>
             <img :src="card.image" :alt="card.image">
         </figure>

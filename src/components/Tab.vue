@@ -38,6 +38,7 @@ export default {
     data() {
         return {
             activeTab: 1,
+            currentTab: 0
         };
     },
 };
